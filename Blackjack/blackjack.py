@@ -9,6 +9,9 @@ deck = [suit + value for suit in suits for value in values]
 def actions(action):
     if action == "1":
         card_deal(player_hand)
+        if hand_value(player_hand) > 21:
+            print("Bust!")
+            time.sleep(1)
     elif action == "2":
         while hand_value(dealer_hand) < 17:
             card_deal(dealer_hand)
@@ -54,6 +57,13 @@ def is_natural(hand):
         return True
     else:
         return False
+    
+def new_turn():
+    print(f"Your hand: {hand_parse(player_hand)}\n{hand_value(player_hand)}\n")
+    print(f"Dealer's hand: {hand_parse(dealer_hand)}\n{hand_value(dealer_hand)}\n")
+    time.sleep(1)
+    print("1) Hit | 2) Stand | 3) Double Down | 4) Split | 5) Surrender")
+    actions(input("Select action: "))
 
 while True:
     balance = 1000
@@ -72,16 +82,16 @@ while True:
             card_deal(player_hand)
         card_deal (dealer_hand)
 
-        print(f"Your hand: {hand_parse(player_hand)}\n{hand_value(player_hand)}\n")
         if is_natural(player_hand):
             print("Natural!\n")
             balance += (2.5*bet)
+            time.sleep(1)
             continue
-        print(f"Dealer's hand: {hand_parse(dealer_hand)}\n{hand_value(dealer_hand)}\n")
-        time.sleep(1)
 
-        print("1) Hit | 2) Stand | 3) Double Down | 4) Split | 5) Surrender")
-        actions(input("Select action: "))
+        new_turn()
+
+
+
 
 
 
