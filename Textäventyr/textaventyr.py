@@ -2,6 +2,7 @@ import data
 import action
 import time
 import random
+import loot
 
 while True:
     player = data.player() # Nollställ spelet
@@ -28,6 +29,11 @@ while True:
             print(f"{enemy.name} defeated!")
             enemy = None
             if random.randint(1,2) == 1:
+                item = random.choice[loot.weapon_loot(), loot.armor_loot()]
+                print(item)
+                if input("Ta? Y/N") == "Y":
+
+
                 
         time.sleep(0.8)
 
