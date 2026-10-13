@@ -35,10 +35,10 @@ while True:
 
 
                 
-        time.sleep(0.8)
+        # time.sleep(0.8)
 
-    if boss_defeated:
+    # if boss_defeated:
         print(f"Congratulations! You win!")
-    else:
+    # else:
         print(f"You died! Game over!")
-    time.sleep(5)
+    # time.sleep(5)
