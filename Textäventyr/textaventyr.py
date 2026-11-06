@@ -31,15 +31,3 @@ while True:
             if random.randint(1,2) == 1:
                 item = random.choice[loot.weapon_loot(), loot.armor_loot()]
                 print(item)
-                if input("Ta? Y/N") == "Y":
-                    # gör något här
-
-
-                
-        # time.sleep(0.8)
-
-    # if boss_defeated:
-    #   print(f"Congratulations! You win!")
-    # else:
-    #   print(f"You died! Game over!")
-    # time.sleep(5)
